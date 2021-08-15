@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>EFARMING</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand " href="index.html">EFARMING</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="profile.php">profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="place.html">place product</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="about" class="bg-primary">
+        <h1 class="text-center" style="color: rgb(255,255,255);">Place Product</h1>
+    </section>
+    <section class="products">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+               <div class="myform form ">
+                  <form action="includes/placeHandler.php" method="post" name="login" enctype="multipart/form-data">
+                     <div class="form-group">
+                        <input type="text" name="title"  class="form-control my-input" id="title" placeholder="Title">
+                     </div>
+                     <div class="form-group">
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2 description" rows="3" placeholder="Description" name="description"></textarea>
+                     </div>
+                     <div class="form-group">
+                        <input type="number" name="price"  class="form-control my-input" id="price" placeholder="Price in USD">
+                     </div>
+                     <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile" name="image">
+                                <label class="custom-file-label" for="inputGroupFile" aria-describedby="inputGroupFileAddon">Product image</label>
+                            </div>
+                            <br>
+                        </div>
+                     </div>
+                     <div class="preview">
+                        <div class="border rounded-lg text-center p-3">
+                            <img src="//placehold.it/140?text=IMAGE" class="img-fluid" id="preview" />
+                        </div>
+                      </div>
+                     <div class="text-center ">
+                        <button type="submit" class=" btn btn-block send-button tx-tfm">place product</button>
+                     </div>
+                     
+                  </form>
+                  
+               </div>
+            </div>
+         </div>
+      
+    </div> 
+    
+    
+    
+    
+
+    <script>
+        $(document).ready(function(){
+    
+        // input plugin
+        bsCustomFileInput.init();
+        
+        // get file and preview image
+        $("#inputGroupFile").on('change',function(){
+            var input = $(this)[0];
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result).fadeIn('slow');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        })
+        
+    })
+
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/creative.js"></script>
+</body>
+
+</html>
